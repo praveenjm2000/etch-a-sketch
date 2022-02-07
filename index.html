@@ -13,8 +13,20 @@
         <div class="h1 flex-row">Etch a Sketch</div>
     </div>
     <div class="mainbox flex-row">
-        <div class="board">
-
+        <div class="leftbox flex-column">
+            <input type="color" id="head" name="head" value="#000">
+            <label for="head">Choose grid color</label>
+            <button id="black" class="btn">Black</button>
+            <button id="rgb" class="btn">RGB</button>
+        </div>
+        <div class="board"></div>
+        <div class="rightbox flex-column">
+        <div class="form__group field flex-column">
+            <input type="number" min="1" max="99" class="form__field" value="32" id="grid" required />
+            <label for="name" class="form__label">Grid Size :</label>
+            <input type="button" class="btn" id="submit" value="Change">
+        </div>
+            <button class="btn" id="clear">Clear</button>
         </div>
     </div>
 </body>
