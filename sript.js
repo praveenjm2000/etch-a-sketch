@@ -5,6 +5,8 @@ const btn42 = document.querySelector('.btn64');
 
 const container=document.querySelector('.board');
 let gridSize=32;
+let color="#000";
+let rgb=false;
 generate();
 
 function generate(){
@@ -15,7 +17,10 @@ function generate(){
         box.classList.add('box');
         box.setAttribute('style',`width: ${w}px; height: ${w}px;`);
         box.addEventListener('mouseenter',() => {
-            box.classList.add('boxClicked');
+            if(rgb){
+                rgbcolor();
+            }
+            box.style.backgroundColor=`${color}`;
         });
         container.appendChild(box);
     }
@@ -43,9 +48,51 @@ clearBtn.addEventListener('click',()=> {
 });
 
 let black=document.getElementById('black');
-let rgb=document.getElementById('rgb');
+let rgbBtn=document.getElementById('rgb');
 black.addEventListener('click',()=> {
-    boxcolor='black'
-    clear()
+    color='black'
+    rgb=false;
+    clear();
     generate();
 })
+
+rgbBtn.addEventListener('click',()=> {
+    rgb=true;
+    clear();
+    generate();
+})
+
+
+colorPicker=document.getElementById('colorPicker');
+
+//colorPicker.addEventListener("input", updateFirst, false);
+colorPicker.addEventListener("change", watchColorPicker, false);
+
+function watchColorPicker(event) {
+    rgb=false;
+    color = event.target.value;
+    clear();
+    generate();
+}
+
+let c=1;
+function rgbcolor(){
+    if(c>3){
+        c=1;
+    }
+    console.log(c);
+    switch(c){
+        case 1:
+            color="red";
+            c++;
+            break;
+        case 2:
+            color="blue";
+            c++;
+            break;
+        case 3:
+            color="green";
+            c++;
+            break;
+    }
+}
