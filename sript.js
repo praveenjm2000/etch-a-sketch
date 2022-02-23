@@ -80,7 +80,6 @@ function rgbcolor(){
     if(c>3){
         c=1;
     }
-    console.log(c);
     switch(c){
         case 1:
             color="red";

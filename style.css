@@ -2,7 +2,7 @@
 
 body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: rgb(46, 48, 51);
+    background-image: linear-gradient(to right, #1f7049e8, #164d32ec);
     margin: 0%;
     padding: 0%;
 }
@@ -23,8 +23,8 @@ body{
 .h1{
     font-size: 56px;
     font-weight: 700;
-    color: rgb(238, 238, 238);
-    padding: 30px 0px;
+    color: #fff;
+    padding: 50px 0px;
 }
 
 .board{
@@ -32,7 +32,7 @@ body{
     height: 480px;
     background-color: white;
     margin: 10px ;
-    border: rgb(216, 25, 25);
+    border: #8A192C;
     border-style: solid;
     border-width: 20px;
     border-radius: 5px;
@@ -58,13 +58,14 @@ body{
     font-size: 18px;
     font-weight: 530;
     margin: 18px;
-    padding: 3px 6px;
+    padding: 6px 10px;
     border-radius: 3px;
     color: white;
-    background-image: linear-gradient(to right, #0c726a, #109c62);
+    background-image: linear-gradient(to right, #134b80, #194d7e);
 }
+
 .btn:hover{
-    background-image: linear-gradient(to right, #095a53, #0d8553);
+transform: scale(1.12);
 }
 
 .box16{
@@ -85,7 +86,7 @@ body{
     font-family: inherit;
     width: 100%;
     border: 0;
-    border-bottom: 2px solid #9b9b9b;
+    border-bottom: 2px solid #ffffff;
     outline: 0;
     font-size: 1.3rem;
     color: #fff;
@@ -108,13 +109,13 @@ body{
     display: block;
     transition: 0.2s;
     font-size: 1rem;
-    color: #9b9b9b;
+    color: #ffffff;
 }
 .form__field:focus {
     padding-bottom: 6px;
     font-weight: 600;
     border-width: 2px;
-    border-image: linear-gradient(to right, #11998e, #1ed464);
+    border-image: linear-gradient(to right, #9bcfff, #78beff);
     border-image-slice: 1;
 }
 .form__field:focus ~ .form__label {
@@ -123,7 +124,7 @@ body{
     display: block;
     transition: 0.2s;
     font-size: 1rem;
-    color: #11998e;
+    color: #ffffff;
     font-weight: 700;
 }
 /* reset input */
@@ -133,6 +134,21 @@ body{
 
 .color_label {
     font-size: 1rem;
-    color: #9b9b9b;
+    color: #ffffff;
     padding: 10px 0px;
+}
+
+#black{
+    background-image: linear-gradient(to right, #000000, #272727);
+}
+#rgb{
+    background-image: linear-gradient(to right, #b62b2b, #176b3d, #154985);;
+}
+
+.box{
+    background-color: #e7e7e7;
+}
+#colorPicker{
+    border: 0px solid;
+    border-radius: 10%;
 }
