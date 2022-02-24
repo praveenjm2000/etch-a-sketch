@@ -7,6 +7,7 @@ const container=document.querySelector('.board');
 let gridSize=32;
 let color="#000";
 let rgb=false;
+let greyflag=false;
 generate();
 
 function generate(){
@@ -19,8 +20,23 @@ function generate(){
         box.addEventListener('mouseenter',() => {
             if(rgb){
                 rgbcolor();
+                box.style.backgroundColor=`${color}`;
             }
-            box.style.backgroundColor=`${color}`;
+            else if(greyflag){
+                if(box.style.backgroundColor.match(/rgba/)){
+                    let opacity=Number(box.style.backgroundColor.slice(-4,-1));
+                    console.log(opacity);
+                    opacity+=0.2;
+                    box.style.backgroundColor=`rgba(0,0,0,${opacity})`;
+                    box.classList.add('grey');
+                }
+                else if(box.classList[1]!='grey'){
+                    box.style.backgroundColor='rgba(0,0,0,0.2)';
+                }
+            }
+            else{
+                box.style.backgroundColor=`${color}`;
+            }
         });
         container.appendChild(box);
     }
@@ -49,15 +65,31 @@ clearBtn.addEventListener('click',()=> {
 
 let black=document.getElementById('black');
 let rgbBtn=document.getElementById('rgb');
-black.addEventListener('click',()=> {
-    color='black'
+let grey=document.getElementById('grey');
+let erase=document.getElementById('erase');
+
+grey.addEventListener('click',()=> {
+    color='#00000055';
+    greyflag=true;
     rgb=false;
     clear();
     generate();
 })
-
+black.addEventListener('click',()=> {
+    greyflag=false;
+    rgb=false;
+    color='black';
+    clear();
+    generate();
+})
+erase.addEventListener('click',()=> {
+    greyflag=false;
+    rgb=false;
+    color='white';
+})
 rgbBtn.addEventListener('click',()=> {
     rgb=true;
+    greyflag=false;
     clear();
     generate();
 })
@@ -70,6 +102,7 @@ colorPicker.addEventListener("change", watchColorPicker, false);
 
 function watchColorPicker(event) {
     rgb=false;
+    greyflag=false;
     color = event.target.value;
     clear();
     generate();

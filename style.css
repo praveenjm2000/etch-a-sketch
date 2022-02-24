@@ -2,7 +2,7 @@
 
 body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: linear-gradient(to right, #1f7049e8, #164d32ec);
+    background-image: linear-gradient(to right, #1f7049e8, #258657ec);
     margin: 0%;
     padding: 0%;
 }
@@ -55,10 +55,10 @@ body{
 
 .btn{
     border-style: none;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 530;
     margin: 18px;
-    padding: 6px 10px;
+    padding: 5px 7px;
     border-radius: 3px;
     color: white;
     background-image: linear-gradient(to right, #134b80, #194d7e);
@@ -138,17 +138,33 @@ transform: scale(1.12);
     padding: 10px 0px;
 }
 
+#grey{
+    background-image: linear-gradient(to right,#3b3b3b, #525252, #444444);
+}
 #black{
     background-image: linear-gradient(to right, #000000, #272727);
 }
+#erase{
+    background-image: linear-gradient(to right, #dfdfdf, #ececec);
+    color: black;
+}
+
 #rgb{
-    background-image: linear-gradient(to right, #b62b2b, #176b3d, #154985);;
+    background-image: linear-gradient(to right, #b62b2b, #176b3d, #154985);
 }
 
 .box{
-    background-color: #e7e7e7;
+    background-color: #ffffff;
 }
 #colorPicker{
     border: 0px solid;
     border-radius: 10%;
+    height: 30px;
+    width: 40px;
+    padding: 0%;
+    flex-shrink: 0;
+    margin-top: 18px;
+}
+.boxshade{
+    background-color: #00000055;
 }
