@@ -25,7 +25,6 @@ function generate(){
             else if(greyflag){
                 if(box.style.backgroundColor.match(/rgba/)){
                     let opacity=Number(box.style.backgroundColor.slice(-4,-1));
-                    console.log(opacity);
                     opacity+=0.2;
                     box.style.backgroundColor=`rgba(0,0,0,${opacity})`;
                     box.classList.add('grey');
@@ -108,23 +107,7 @@ function watchColorPicker(event) {
     generate();
 }
 
-let c=1;
+
 function rgbcolor(){
-    if(c>3){
-        c=1;
-    }
-    switch(c){
-        case 1:
-            color="red";
-            c++;
-            break;
-        case 2:
-            color="blue";
-            c++;
-            break;
-        case 3:
-            color="green";
-            c++;
-            break;
-    }
+    color=`hsl(${Math.random() * 360}, 100%, 50%)`;
 }
